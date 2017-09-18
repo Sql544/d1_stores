@@ -1,0 +1,157 @@
+/*         main        */
+.main {
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 50px;
+  margin-bottom: 200px;
+  overflow: hidden;
+}
+.main .main_inner {
+  margin: 0 auto;
+  background: white;
+  width: 980px;
+  z-index: 10;
+  overflow: hidden;
+}
+.main .main_inner .main_left {
+  float: left;
+  width: 542px;
+  padding-top: 0;
+}
+.main .main_inner .main_left span {
+  font-size: 24px;
+  line-height: 25px;
+  color: #d5a2a9;
+  font-weight: bold;
+  display: block;
+  padding-top: 25px;
+}
+.main .main_inner .main_left span a {
+  color: #4b4b4b;
+}
+.main .main_inner .main_right {
+  float: right;
+  width: 402px;
+  position: relative;
+  height: 458px;
+}
+.main .main_inner .main_right .login_bg {
+  position: absolute;
+  width: 402px;
+  height: 388px;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  padding-top: 70px;
+  background: url(../images/login_fd.png);
+  z-index: 100;
+}
+.main .main_inner .main_right .login_message {
+  position: absolute;
+  width: 402px;
+  height: 388px;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  padding-top: 70px;
+  z-index: 101;
+}
+.main .main_inner .main_right .login_message table {
+  color: #333;
+  border-collapse: collapse;
+}
+.main .main_inner .main_right .login_message table .text {
+  text-align: right;
+  width: 80px;
+}
+.main .main_inner .main_right .login_message table .input_container {
+  text-align: left;
+}
+.main .main_inner .main_right .login_message table .input_container a {
+  color: black;
+  text-decoration: underline;
+}
+.main .main_inner .main_right .login_message table input {
+  vertical-align: middle;
+  width: 182px;
+  height: 20px;
+  line-height: 20px;
+  background: #f4f4f4;
+  border: 1px solid #acacac;
+}
+.main .main_inner .main_right .login_message table .spanmsg {
+  border: 1px solid #6bc7f0;
+  background: #e8f5fd;
+  color: #74797d;
+  font-weight: normal;
+  padding: 0;
+  line-height: 18px;
+  margin-top: 1px;
+}
+.main .main_inner .main_right .login_message table #errUsername {
+  width: 160px;
+  display: none;
+}
+.main .main_inner .main_right .login_message table #errPwd {
+  display: none;
+}
+.main .main_inner .main_right .login_message table #errCheckNum {
+  display: none;
+}
+.main .main_inner .main_right .login_message table .spanmsg2 input {
+  width: 80px;
+}
+.main .main_inner .main_right .login_message table .spanmsg2 img {
+  vertical-align: bottom;
+  cursor: pointer;
+}
+.main .main_inner .main_right .login_message table .remember {
+  text-align: left;
+  float: left;
+  padding-top: 8px;
+  padding-left: 10px;
+}
+.main .main_inner .main_right .login_message table .remember input {
+  height: 15px;
+  width: 20px;
+  background: #fff;
+  border: 0;
+  vertical-align: middle;
+}
+.main .main_inner .main_right .login_message .paterners {
+  background: url(../images/login_lhdiv.jpg);
+  width: 332px;
+  height: 93px;
+  float: right;
+  margin-left: 18px;
+  margin-right: 35px;
+  padding: 15px 0 0 5px;
+}
+.main .main_inner .main_right .login_message .paterners li {
+  float: left;
+  padding: 0 10px;
+  vertical-align: middle;
+  height: 10px;
+  margin-bottom: 20px;
+}
+.main .main_inner .main_right .login_message .paterners li img {
+  vertical-align: middle;
+}
+.main .main_inner .main_right .login_message .paterners li a {
+  padding: 0 10px;
+  border-right: 1px solid black;
+}
+.main .main_inner .main_right .login_message .paterners .no_border_li a {
+  border: 0;
+}
+.main .main_inner .main_right .login_message .msg_div {
+  width: 345px;
+  float: right;
+  margin-right: 26px;
+}
+.main .main_inner .main_right .login_message .register_div {
+  overflow: hidden;
+  padding-top: 10px;
+  width: 395px;
+  text-align: center;
+}

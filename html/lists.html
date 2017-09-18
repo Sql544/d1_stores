@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script data-main="lists.js" src="../js/require.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/head.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/footer.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/lists.css"/>
+		
+		<title>优尚网-列表详情</title>
+	</head>
+	<body>
+		<div id="head_insert"></div>
+		<div class="classmenu">
+			<div class="cm_l">
+				<p><a href="../index.html">首页</a></p>
+				<p>
+					&nbsp;&nbsp;
+					<b>></b>
+					&nbsp;&nbsp;
+					<a href="#" style="color: #4b4b4b;">化妆品</a></p>
+			</div>
+		</div>
+		<div class="listbody">
+			<div class="listbody_container mg_top">
+				
+			</div>
+			<div class="shop_container mg_top">
+				<div class="sort_nav">
+					<ul>
+						<li><a href="#">综合</a></li>
+						<li class="sellnum"><a href="#">销量</a></li>
+						<li class="sellnum onmove"><a href="#">新品</a></li>
+						<li class="price"><a href="#">价格</a></li>
+					</ul>
+					<div class="sort_price">
+						<input type="checkbox" id="speciall_price" value="1" />
+						&nbsp;限时特价&nbsp;&nbsp;&nbsp;
+						<input type="checkbox" id="sell_self" value="1"/>
+						&nbsp;D1自营
+					</div>
+					<div class="sort_page">
+						<span>1/2&nbsp;&nbsp;</span>
+						<span>
+							&nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="#">
+								<img src="../images/lists/pagearrow-right.gif" width="21"height="20"/>
+							</a>
+						</span>
+					</div>
+				</div>
+				<ul class="shop_list mg_top">
+					
+				</ul>
+				<div class="clear">
+					
+				</div>
+				<div class="pagefooter">
+					<span>共<font>2</font>页，当前第<font>1</font>页</span>
+					<!--<span class="curr">1</span>-->
+					<!--<a href="#">2</a>-->
+					<!--<a href="#">下一页</a>
+					<a href="#">尾页</a>-->
+				</div>
+			</div>
+		</div>
+		<div id="footer_insert"></div>
+	</body>
+</html>
+<script id="myul" type="text/html">
+	<% for(var j in data){%>
+		<div class="shop_attr">
+			<div class="shoptitle">
+				<%= data[j].name %>
+			</div>
+			<div class="shop_value">
+				<ul>
+					<% for(var i=0;i<data[j].value.length;i++) { %>
+						<li><a href="#"><%= data[j].value[i] %></a></li>
+					<%}%>
+				</ul>
+			</div>
+			<div class="clear">
+				
+			</div>
+		</div>
+		
+	<%}%>
+		
+</script>
+<script id="mygoods" type="text/html">
+<% for(var j in data){%>
+	<li>
+		<div class="goods">
+			<div class="goods_img">
+				<a href="#">
+					<img src=<%= data[j].src %>/>
+				</a>
+			</div>
+			<div class="goods_price">
+				<span class="my_price">
+					￥
+					<font style="font-size: 21px;"><%= data[j].count_price %></font>
+				</span>
+				<span class="mg_top">
+					&nbsp;&nbsp;￥
+					<s><%= data[j].price %></s>
+					&nbsp;&nbsp;
+				</span>
+				<span class="hot_shops">
+					<img src="../images/lists/listsf.jpg"/>
+				</span>
+			</div>
+			<div class="clear">
+				
+			</div>
+			<div class="goods_title">
+				<span class="goods_name">
+					<a href="#"><%= data[j].title %></a>
+				</span>
+			<%	if(data[j].talk==undefined)  {%>
+				<span>
+					&nbsp;
+				</span>
+			<%}else{%>
+				<span class="goods_talk">
+					<a href="#"><%= data[j].talk %>篇评论</a>
+				</span>
+			<%}%>
+			</div>
+			<div class="goods_incart">
+				<span>
+					<input type="text" id="goodsnum" value="1" />
+				</span>
+				<span class="goods_num_btn mg_l">
+					&nbsp;<a style="cursor: pointer;"><img src="../images/lists/amountarrow-up.gif"/></a>
+				</br>
+					<a style="margin-top: -5px; cursor: pointer;"><img src="../images/lists/amountarrow-down.gif"/></a>
+				</span>
+				<span class="mg_l">
+					<img src="../images/lists/addcart.jpg"/>
+				</span>
+			</div>
+		<%	if(data[j].shop!=undefined)  {%>
+			<div class="goods_shop">
+				<a href="#"><%= data[j].shop %></a>
+			</div>
+		<%}%>
+		</div>
+	</li>
+<%}%>
+</script>

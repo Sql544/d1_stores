@@ -1,0 +1,103 @@
+@import "mixin";
+.main{
+    overflow: hidden;
+    width: 100%;
+    .reg_top{
+        margin: 0 auto;
+        width: 756px;
+        height: 76px;
+        background: url(../images/register/zc_03-2.jpg) no-repeat;
+        margin-top: 40px;
+        .login_btn{
+            padding-left: 500px;
+            height: 62px;
+            text-align: right;
+            padding-top: 14px;
+            ul{
+                float: right;
+                .text a{
+                    color: #fff;
+                    font-size: 16px;
+                    text-align: center;
+                    vertical-align: middle;
+                    margin-right: 20px;
+                }
+                .btn{
+                    margin-right: 20px;
+                }
+                li{
+                    float: left;
+                    height: 42px;
+                    line-height: 36px;
+                }
+            }
+        }
+    }
+    .reg_middle{
+        margin: 0 auto;
+        width: 756px;
+        background: url(../images/register/zc_06.jpg);
+        padding-top: 20px;
+        .reg_middle_main{
+            padding-left: 10px;
+            table{
+                color: #333;
+                font-size: 14px;
+                td{
+                    line-height: 22px;
+                }
+                .input_style{
+                    width: 220px;
+                    border: 1px solid #ababab;
+                    background: #f4f4f4;
+                    height: 22px;
+                }
+                .reg_info{
+                    font-size: 16px;
+                    color: #d1436b;
+                    font-weight: bold;
+                    padding-bottom: 30px;
+                }
+                .left_text{
+                    text-align: right;
+                    width: 150px;
+                }
+                
+                .right_input{
+                    text-align: left;
+                    span{
+                        display: none;
+                        color: #999999;
+                        font-size: 12px;
+                    }
+                    .check_code_img{
+                        vertical-align: bottom;
+                        cursor: pointer;
+                        margin-top: 3px;
+                    }
+                    #getCheckCode{
+                        font-size: 13px;
+                        height: 30px;
+                        line-height: 30px;
+                        padding: 0 10px;
+                    }
+                }
+                #register_submit{
+                    width: 120px;
+                    height: 35px;
+                    background: #791268;
+                    color: white;
+                    font-size: 18px;
+                    font-weight: bold;
+                    padding: 0 10px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .reg_bottom{
+        margin: 0 auto;
+        width: 756px;
+        margin-bottom: 20px;
+    }
+}

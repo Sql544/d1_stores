@@ -1,0 +1,274 @@
+.classmenu {
+  border: 1px solid #e2e2e2;
+  padding-left: 10px;
+  line-height: 32px;
+  height: 36px;
+  margin: 0 auto;
+  width: 980px;
+}
+.classmenu .cm_l {
+  margin-right: 15px;
+  float: left;
+}
+.classmenu .cm_l p {
+  float: left;
+}
+
+.listbody {
+  margin: 0 auto;
+  width: 980px;
+}
+.listbody .listbody_container {
+  border: 1px solid #ccc;
+  color: #666;
+}
+.listbody .listbody_container a {
+  color: #666;
+}
+.listbody .listbody_container .clear {
+  clear: both;
+  font-size: 1px;
+  line-height: 0;
+  height: 0;
+}
+.listbody .listbody_container .shop_attr {
+  padding: 5px 0;
+  border-bottom: 1px solid #e2e2e2;
+  position: relative;
+}
+.listbody .listbody_container ul {
+  padding-left: 10px;
+  float: left;
+  overflow: hidden;
+  width: 840px;
+  max-height: 60px;
+  line-height: 30px;
+  white-space: nowrap;
+}
+.listbody .listbody_container li {
+  float: left;
+  margin-right: 15px;
+  height: 30px;
+}
+.listbody .listbody_container .shoptitle {
+  line-height: 30px;
+  color: #999;
+  border-right: 1px solid #e2e2e2;
+  float: left;
+  width: 86px;
+  height: 32px;
+  text-align: center;
+}
+.listbody .mg_top {
+  margin-top: 10px;
+}
+.listbody .shop_container .sort_nav {
+  border: 1px solid #ccc;
+  border-top: 2px solid #575757;
+  height: 35px;
+}
+.listbody .shop_container .sort_nav ul li {
+  border-right: 1px solid #ccc;
+  float: left;
+  width: 85px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+}
+.listbody .shop_container .sort_nav ul li a {
+  color: #4b4b4b;
+}
+.listbody .shop_container .sort_nav ul li a:hover {
+  color: #AA2E44;
+}
+.listbody .shop_container .sort_nav ul .sellnum a {
+  display: block;
+  width: 85px;
+  height: 35px;
+  background: url(../images/lists/downarrow-grey.gif) 56px center no-repeat;
+}
+.listbody .shop_container .sort_nav ul .onmove a {
+  background-image: url(../images/lists/downarrow-red.gif);
+  color: #aa2e44;
+}
+.listbody .shop_container .sort_nav ul .price a {
+  display: block;
+  width: 85px;
+  height: 35px;
+  background: url(../images/lists/prizearrow-du.gif) 56px center no-repeat;
+}
+.listbody .shop_container .sort_nav .sort_price {
+  padding-left: 10px;
+  float: left;
+  width: 300px;
+  line-height: 35px;
+  height: 35px;
+}
+.listbody .shop_container .sort_nav .sort_price input {
+  vertical-align: middle;
+  font-size: 12px;
+}
+.listbody .shop_container .sort_nav .sort_page {
+  padding-right: 10px;
+  float: right;
+  width: 200px;
+  line-height: 29px;
+  padding-top: 6px;
+  height: 29px;
+  text-align: right;
+}
+.listbody .shop_container .shop_list li:hover {
+  border: 1px solid #c51520;
+}
+.listbody .shop_container .shop_list li {
+  height: 380px;
+  border: 1px solid white;
+  float: left;
+  width: 234px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.listbody .shop_container .shop_list li .goods {
+  padding: 0 10px;
+}
+.listbody .shop_container .shop_list li .goods .clear {
+  clear: both;
+  font-size: 1px;
+  line-height: 0;
+  height: 0;
+}
+.listbody .shop_container .shop_list li .goods .goods_img {
+  padding-top: 10px;
+  position: relative;
+  text-align: center;
+}
+.listbody .shop_container .shop_list li .goods .goods_img img {
+  height: 200px;
+  width: 200px;
+}
+.listbody .shop_container .shop_list li .goods .goods_price {
+  height: 32px;
+}
+.listbody .shop_container .shop_list li .goods .goods_price span {
+  float: left;
+}
+.listbody .shop_container .shop_list li .goods .goods_price .my_price {
+  font-weight: 800;
+  color: #c51520;
+}
+.listbody .shop_container .shop_list li .goods .goods_price s {
+  text-decoration: line-through;
+}
+.listbody .shop_container .shop_list li .goods .goods_price .hot_shops {
+  margin-top: 5px;
+  display: block;
+  background: #ea4d1a;
+  width: 36px;
+  color: #fff;
+  line-height: 20px;
+  height: 20px;
+  text-align: center;
+}
+.listbody .shop_container .shop_list li .goods .goods_title {
+  font-size: 12px;
+  color: #858585;
+  line-height: 21px;
+}
+.listbody .shop_container .shop_list li .goods .goods_title a {
+  color: #4b4b4b;
+}
+.listbody .shop_container .shop_list li .goods .goods_title a:hover {
+  color: #c51520;
+}
+.listbody .shop_container .shop_list li .goods .goods_title .goods_talk {
+  background: url(../images/lists/criticsicon.gif) left top no-repeat;
+  padding-left: 20px;
+}
+.listbody .shop_container .shop_list li .goods .goods_title .goods_name {
+  display: block;
+  height: 42px;
+}
+.listbody .shop_container .shop_list li .goods .goods_incart {
+  height: 30px;
+  text-align: center;
+}
+.listbody .shop_container .shop_list li .goods .goods_incart span {
+  float: left;
+}
+.listbody .shop_container .shop_list li .goods .goods_incart span input {
+  border: 1px solid #ccc;
+  width: 40px;
+  height: 26px;
+}
+.listbody .shop_container .shop_list li .goods .goods_incart .goods_num_btn {
+  line-height: 14px;
+  height: 28px;
+}
+.listbody .shop_container .shop_list li .goods .goods_incart .goods_num_btn a {
+  display: inline-block;
+  width: 16px;
+  height: 14px;
+}
+.listbody .shop_container .shop_list li .goods .goods_incart .goods_num_btn a img {
+  display: inline-block;
+  width: 16px;
+  height: 14px;
+  border: none;
+}
+.listbody .shop_container .shop_list li .goods .goods_incart .goods_num_btn a:hover {
+  color: #c51520;
+}
+.listbody .shop_container .shop_list li .goods .goods_incart .mg_l {
+  margin-left: 10px;
+}
+.listbody .shop_container .shop_list li .goods .goods_shop {
+  margin-top: 4px;
+  font-size: 12px;
+  background: #f4f4f4;
+  width: 210px;
+  color: #575757;
+  line-height: 25px;
+  height: 25px;
+  text-align: center;
+}
+.listbody .shop_container .shop_list li .goods .goods_shop a {
+  color: #4b4b4b;
+}
+.listbody .shop_container .shop_list li .goods .goods_shop a:hover {
+  color: #c51520;
+}
+.listbody .shop_container .clear {
+  clear: both;
+  font-size: 1px;
+  line-height: 0;
+  height: 0;
+}
+.listbody .shop_container .pagefooter {
+  margin-top: 10px;
+  overflow: hidden;
+  color: #4b4b4b;
+  height: 40px;
+  text-align: center;
+}
+.listbody .shop_container .pagefooter .curr {
+  display: inline-block;
+  padding: 3px 8px;
+  font-size: 12px;
+  color: #8b8b8b;
+  background: #cdcdcd;
+  border: 1px solid #a4a4a4;
+  text-decoration: none;
+}
+.listbody .shop_container .pagefooter a {
+  display: inline-block;
+  border: 1px solid #A4A4A4;
+  padding: 3px 8px;
+  font-size: 12px;
+  margin: 0 5px;
+  color: #8B8B8B;
+  text-decoration: none;
+  background: url(../images/lists/pgbg.gif);
+}
+.listbody .shop_container .pagefooter a:hover {
+  color: #AA2E44;
+}

@@ -1,0 +1,52 @@
+/*         head         */
+.head {
+  width: 100%;
+}
+.head .head_inner {
+  width: 980px;
+  margin: 0 auto;
+}
+.head .head_inner h1 a {
+  display: inline-block;
+  width: 276px;
+  height: 83px;
+  float: left;
+  text-indent: -9999;
+  background: url(../images/index_iconnew.png) no-repeat -215px -145px;
+}
+.head .head_inner .user_help {
+  padding-top: 10px;
+  margin-left: 300px;
+}
+.head .head_inner .user_help p {
+  margin-left: 30px;
+  margin-top: 10px;
+  font-size: 12px;
+  width: 300px;
+  float: left;
+}
+.head .head_inner .user_help p a {
+  color: #8cc341;
+}
+.head .head_inner .user_help ul {
+  float: right;
+  line-height: 34px;
+}
+.head .head_inner .user_help ul li {
+  float: left;
+}
+.head .head_inner .user_help ul li a {
+  display: inline-block;
+  height: 12px;
+  padding: 0 5px;
+  font-size: 12px;
+  line-height: 12px;
+  color: black;
+  border-right: 1px solid black;
+}
+.head .head_inner .user_help ul a:hover {
+  color: brown;
+}
+.head .head_inner .user_help ul .no_border_li a {
+  border: 0;
+}

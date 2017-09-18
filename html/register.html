@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script data-main="register.js" src="../js/require.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/footer.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/login_head.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/register.css"/>
+		<title>优尚网-注册</title>
+	</head>
+	<body>
+		<div id="head_insert"></div>
+		<div class="main">
+			<div class="reg_top">
+				<div class="login_btn">
+					<ul>
+						<li class="text"><a href="login.html">已有账户</a></li>
+						<li class="btn"><a href="login.html"><img src="../images/register/reglogin.png"/></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="reg_middle">
+				<div class="reg_middle_main">
+					<form action="" method="post">
+						<table width="740">
+							<tbody>
+								<tr>
+									<td class="reg_info" colspan="3">填写注册信息</td>
+								</tr>
+								<tr>
+									<td class="left_text">
+										*手机号码：
+									</td>
+									<td class="right_input">
+										<input type="text" id="mobile_phone" class="input_style" />
+										&nbsp;&nbsp;
+										<span id="tel_notice">
+											<img src="../images/register/no.gif"/>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="left_text"></td>
+									<td class="right_input">
+										<input type="text" id="check_code" class="check_code" placeholder="请输入右侧图片数字" />
+										<img class="check_code_img"src="../images/A53T.gif"/>
+										<a href="#" style="color: #575757;background: none;">刷新</a>
+										&nbsp;&nbsp;
+										<input type="button" name="" id="getCheckCode" value="获取验证码" />
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3" height="10"></td>
+								</tr>
+								<tr>
+									<td class="left_text">
+										*手机验证码：
+									</td>
+									<td class="right_input">
+										<input type="text" id="mobile_phone_check" class="input_style" style="width: 118px;"/>
+									</td>
+								</tr>
+								<tr>
+									<td class="left_text">&nbsp;</td>
+									<td>
+										<span id="code_notice" style="color: red;display: none;">
+											验证码不能为空！
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="left_text">&nbsp;</td>
+									<td>
+										<span id="mobile_notice" style="color: red;display: none;">
+											手机号码不能为空，请输入！
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="left_text">
+										*您的性别：
+									</td>
+									<td class="right_input sexinput">
+										<input type="checkbox" id="sex1" name="sex" />
+										男&nbsp;&nbsp;
+										<input type="checkbox" id="sex2" name="sex" />
+										女&nbsp;&nbsp;
+										<span id="sex_notice_sucess">
+											<img src="../images/register/suc.jpg"/>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="left_text">&nbsp;</td>
+									<td>
+										<span id="sex_notice" style="color: #999999;">
+											选择性别，方便我们推荐适合您的商品。 
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3" height="10"></td>
+								</tr>
+								<tr>
+									<td class="left_text">*设置密码：</td>
+									<td class="right_input">
+										<input type="password" id="password" class="input_style" />
+										&nbsp;&nbsp;
+										<span id="pwd_notice_img">
+											<img src="../images/register/no.gif"/>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="left_text">&nbsp;</td>
+									<td>
+										<span id="pwd_notice_word" style="color: red;display: none;">
+											密码长度必须6-14位
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3" height="10"></td>
+								</tr>
+								<tr>
+									<td class="left_text">*确认密码：</td>
+									<td class="right_input">
+										<input type="password" id="Confirm_password" class="input_style" />
+										&nbsp;&nbsp;
+										<span id="Confirm_pwd_notice_img">
+											<img src="../images/register/no.gif"/>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="left_text">&nbsp;</td>
+									<td>
+										<span id="Confirm_pwd_notice_word" style="color: red;display: none;">
+											密码长度必须6-14位
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3" height="10"></td>
+								</tr>
+								<tr>
+									<td colspan="3" style="text-align: center;">
+										<input type="button" id="register_submit" value="立即注册" />
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3" height="20"></td>
+								</tr>
+							</tbody>
+						</table>
+					</form>
+				</div>
+			</div>
+			<div class="reg_bottom">
+				<img src="../images/register/zc_08.jpg"/>
+			</div>
+		</div>
+		<div id="footer_insert"></div>
+	</body>
+</html>

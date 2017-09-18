@@ -1,0 +1,207 @@
+@import "mixin";
+/*           nav               */
+
+
+.banner{
+    width:100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+//.banner_inner{
+//  text-align:center;
+//  @include screen_width;
+//}
+/*           banner               */
+.banner_inner .img1{
+    @include banner_style;
+    background: url("../images/01904396_170629.jpg") no-repeat center;  
+}
+.banner_inner .img2{
+    @include banner_style;
+    background: url("../images/01207373_170629.jpg") no-repeat center;  
+}
+.banner_inner .img3{
+    @include banner_style;
+    background: url("../images/pc01207356.jpg") no-repeat center;  
+}
+.banner_inner .img4{
+    @include banner_style;
+    background: url("../images/pc01207309.jpg") no-repeat center;  
+}
+.banner_inner .img5{
+    @include banner_style;
+    background: url("../images/pc01207352519.jpg") no-repeat center;  
+}
+.banner .point{
+    width: 100%;
+    height: 400px;
+}
+.banner .left_point{
+    @include point_style;
+    display: none;
+    background: url("../images/white-left.png") no-repeat scroll 0 0 transparent;
+    left: -280px;
+    margin-left: 50%;
+}
+.banner .right_point{
+    display: none;
+    @include point_style;
+    right: -480px;
+    margin-right: 50%;
+    background: url("../images/white-right.png") no-repeat scroll 0 0 transparent;
+}
+.banner .banner_nav{
+    margin-left: 50%;
+    bottom: 14px;
+    position: absolute;
+    z-index: 900;
+}
+.banner .banner_nav ul li {
+    float: left;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    margin-left: 10px;
+    color: #FFF7F9;
+    cursor: pointer;
+    display: inline-block;
+    font-family: arial;
+    font-size: 12px;
+}
+.static{
+    background: url("../images/y-1.png");
+}
+.active{
+    background: url("../images/y-2.png");
+}
+/*           moveTitle               */
+.protect_box{
+    width:100%;
+    height: 60px;
+}
+.moveTitle{
+    width: 100%;
+    height: 60px;
+    background: #ececec;
+}
+.moveTitle_inner{
+    @include screen_width;
+    height: 60px;
+}
+.moveTitle_inner ul li{
+    float: left;
+    margin-top: 15px;
+}
+.moveTitle_inner ul li a{
+    padding: 0 55px;
+    line-height: 30px;
+    font-size: 14px;
+    display: block;
+    text-align: center;
+}
+.moveTitle_inner ul li a:hover{
+    cursor: pointer;
+}
+
+.moveTitle_inner ul .normal:hover{
+    color: #666666;
+}
+
+/*          main          */
+.main{
+    width: 100%;
+    background: #f6f6f6;
+}
+.main_inner{
+    overflow: hidden;
+    @include screen_width;
+}
+.main_inner .theme{
+    overflow: hidden;
+    
+}
+.main_inner .theme .title{
+    @include title_style;
+}
+.main_inner .theme_shops{
+    margin: 30px -35px;
+}
+.main_inner .theme .theme_shops .col{
+    box-sizing: border-box;
+    padding: 0 35px;
+    float: left;
+    width: 50%;
+}
+.main_inner .theme .theme_shops .col .item{
+    margin-bottom: 25px;
+    padding: 5px;
+    background: white;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.06);
+}
+.main_inner .theme .theme_shops .col .item dd{
+    margin: 30px 0 20px 0;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    font-weight: bold;
+}
+.main_inner .design{
+    overflow: hidden;
+}
+.main_inner .design .title{
+    overflow: hidden;
+    @include title_style;
+}
+.main_inner .design .design_shops{
+    width: 1200px;
+    overflow: hidden;
+}
+.main_inner .design .design_shops .col{
+    overflow: hidden;
+    width: 370px;
+    float: left;
+    margin: 10px 30px 35px 0;
+}
+.main_inner .design .design_shops .col .item{
+    height: 440px;
+    position: relative;
+}
+.main_inner .design .design_shops dt{
+    width:370px;
+    height:370px;
+    overflow: hidden;
+}
+.main_inner .design .design_shops dd{
+    width:370px;
+    height: 135px;
+    display: block;
+    position: absolute;
+    left: 0;
+    border-bottom: 5px solid #dedede;
+    background: white;
+}
+.main_inner .design .design_shops dd p{
+    line-height: 70px;
+    font-size: 18px;
+    text-align: center;
+}
+.main_inner .design .design_shops dd p span{
+    color: red;
+}
+.main_inner .design_shops .black_box{
+    height: 300px;
+    width: 370px;
+    position: absolute;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    top: 0;
+}
+.active_Title_nav{
+    background: #cd0074;
+    color: white;
+}
+.normal{
+    color: black;
+}
