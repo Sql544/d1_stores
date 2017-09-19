@@ -309,7 +309,7 @@
   position: absolute;
   left: 0;
   top: 44px;
-  z-index: 999;
+  z-index: 200000;
   height: auto;
   background: white;
   border: 2px solid #F0424E;

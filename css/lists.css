@@ -13,6 +13,9 @@
 .classmenu .cm_l p {
   float: left;
 }
+.classmenu .cm_l p a {
+  color: black;
+}
 
 .listbody {
   margin: 0 auto;

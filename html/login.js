@@ -10,7 +10,6 @@ require(["../js/config"],function(){
 			summit_click(CookieMessage);
 			input_focus_event();
 			input_blur_event();
-			console.log(print);
 			
 		})
 		function summit_click(CookieMessage){
@@ -26,7 +25,14 @@ require(["../js/config"],function(){
 					}
 				})
 				if(canlogin==true){
-					window.location.href="http://127.0.0.1:8020/d1/index.html";
+					window.location.href="/index.html?username="+$("#login_username").val();
+					var arr = [];
+					var islogin= {
+						username : $("#login_username").val(),
+						login : true
+					};
+					arr.push(islogin)
+					Cookie.insertCookie("loginmessage",JSON.stringify(arr),0,"/");
 				}else{
 					alert("密码错误");
 				}

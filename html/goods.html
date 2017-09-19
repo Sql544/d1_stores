@@ -2,8 +2,341 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>【Mentholatum曼秀雷敦】曼秀雷敦新碧户外透薄防晒乳液35g 高倍防水防汗防晒霜SPF30+ </title>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/head.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/footer.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/goods.css"/>
+		<script data-main="goods.js" src="../js/require.js"></script>
 	</head>
 	<body>
+		<div id="head_insert"></div>
+		<div class="center">
+			
+		</div>
+		<div class="fixed_box">
+			<img src="../images/goods/2017-9-18/p_015.jpg"/>
+		</div>
+		<div id="footer_insert"></div>
 	</body>
 </html>
+<script id="Jsonp" type="text/html">
+	
+	
+	
+	<div class="center_nav">
+		<img src="../images/goods/2017-9-18/green.gif" width="20" height="35" align="top" style="margin-top: -10px;"/>
+		<a href="http://localhost:8020/d1/index.html" target="_blank">首页</a>
+		&nbsp;>&nbsp;
+		<a href="http://localhost:8020/d1/html/lists.html" target="_blank">化妆品</a>
+		&nbsp;>&nbsp;
+		<a href="http://localhost:8020/d1/html/lists.html" target="_blank">面部护肤</a>
+		&nbsp;>&nbsp;
+		<a href="http://localhost:8020/d1/html/lists.html" target="_blank" class="choose">防晒/晒后</a>
+		&nbsp;>&nbsp;
+		<%= data.pgdsname %>
+	</div>
+	<div class="goods_message">
+		<div class="goods_new">
+			<div class="goods_new_top_left">
+				<div class="goods_title">
+					<span>
+						D1优尚网
+					</span>
+				</div>
+				<div class="goods_img">
+					<div class="goods_show">
+						<span>
+							
+						</span>
+						<div class="wrap">
+							<a href="../images/goods/2017-9-18/01425875_3.jpg">
+								<img style="display: block;" src=<%= data.pimg %>/>
+								<div class="small_box">
+									
+								</div>
+							</a>
+							<div class="mouse_wrap">
+							</div>
+							<div class="big_box">
+							</div>
+						</div>
+						<ul>
+							<% for(var j=0;j<data.gimgitems.length;j++) {%>
+							<li><a href="#"><img src=<%= data.gimgitems[j].gimgitem%>/></a></li>
+							<%}%>
+						</ul>
+					</div>
+					<div class="fdImg">
+						<img src="../images/goods/2017-9-18/fdtp.gif" style="border: none;" align="top"/>
+						<a href="" target="_blank">点击放大图片</a>
+					</div>
+					<div class="share">
+						<img src="../images/goods/2017-9-18/p_013-2.png"/>
+						&nbsp;&nbsp;
+						<a href="#">
+							<img src="../images/goods/2017-9-18/sina.gif"/>
+						</a>
+						<a href="#">
+							<img width="18" height="18" src="../images/goods/2017-9-18/sohuwb.gif"/>
+						</a>
+						<a href="#">
+							<img src="../images/goods/2017-9-18/wb.gif"/>
+						</a>
+						<a href="#">
+							<img src="../images/goods/2017-9-18/qq.gif"/>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="goods_new_top_right">
+				<div class="goods_right_title">
+					<h1><%= data.pgdsname %>
+						<span style="display: block;"><%= data.pgdstitle %> </span>
+					</h1>
+				</div>
+				<div class="goods_right_price">
+					<div class="all_price">
+						<table border="0" width="240" height="80" cellspacing="0" cellpadding="0">
+							<tbody>
+								<tr>
+									<td height="55" width="160" class="big_price">￥<%= data.hyprice %>.00</td>
+									<td class="discount"><span><%= parseInt((data.hyprice/data.saleprice)*100)/10+"折" %></span></td>
+								</tr>
+								<tr>
+									<td height="25" class="delete_price">
+										市场价：￥
+										<s><%= data.saleprice %></s>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="discount_word">
+						促销价
+					</div>
+				</div>
+				<div class="left_time">
+					<table width="100%" height="30">
+						<tbody>
+							<tr>
+								<td width="5%">
+									<img src="../images/goods/2017-9-18/p_006.jpg" height="21" width="21"/>
+								</td>
+								<td width="30%">
+									
+									<span id="leftTime"></span>
+								</td>
+								<td width="65%"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<table border="0" cellspacing="0" cellpadding="0" width="100%">
+					<tbody>
+						<tr height="30"><td colspan="3">商品编码：<%= data.gdsid %></td></tr>
+						<tr height="30"><td colspan="3">品       牌：<font color="#c0000">[<a href="#" target="_blank">Mentholatum曼秀雷敦</a>]</font></td></tr>
+						<tr height="30"><td colspan="3">服       务：<%= data.shoptxt %></td></tr>
+						<tr height="30">
+							<td colspan="3">
+								<div style="float: left;padding-top: 6px;">
+									顾客评分：
+								</div>
+								<div class=<%= "level"+data.comscore %> style="float: left;">
+									
+								</div>
+							</td>
+						</tr>
+						<tr height="30">
+							<td colspan="3">
+								<div class="buy_num">
+									<div>
+										<span style="float: left;">购买数量：</span>
+										&nbsp;&nbsp;
+										<a  class="cut" style="float: left;">
+											<img src="../images/goods/2017-9-18/j_a.png"/>
+										</a>
+										<input type="text" id="buy_num_input" value="1" />
+										<a  class="add" style="float: left;">
+											<img src="../images/goods/2017-9-18/a_j.png"/>
+										</a>
+									</div>
+									<div class="clear">
+										
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr height="60">
+							<td colspan="3" valign="middle">
+								<a href="#" style="margin-right: 5px;"><img src="../images/goods/2017-9-18/frgwc.png"/></a>
+								<a href="#"><img src="../images/goods/2017-9-18/jrsc.png"/></a>
+							</td>
+						</tr>
+						
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="clear">
+			
+		</div>
+	</div>
+	<div class="goods_show_img">
+		<div class="goods_show_img_left">
+			<div class="leftpoor">
+				<div class="goods_show_left_title">
+					-购买过本商品的用户还购买过-
+				</div>
+				<div class="goods_show_content">
+					<% for(var i=0;i<data.also_buy.length;i++){ %>
+					<div class="also_buy">
+						<a href="#">
+							<img src=<%= data.also_buy[i].src %>/>
+							<br>
+						</a>
+						<a href="#"><%= data.also_buy[i].title %></a>
+						<br />
+						<span class="nowprice" style="color: #c41323;">￥<%= data.also_buy[i].nowprice %></span>
+						&nbsp;&nbsp;&nbsp;
+						<span class="preprice" style="color: #848484;">
+							￥
+							<s style="text-decoration: line-through;"><%= data.also_buy[i].preprice %></s>
+						</span>
+					</div>
+					<% } %>
+				</div>
+			</div>
+			<div class="leftpoor">
+				<div class="goods_show_left_title">
+					--最近浏览商品--
+				</div>
+				<div class="goods_show_content">
+					<% for(var i=0;i<data.recentlysee.length;i++){ %>
+					<div class="also_buy">
+						<a href="#">
+							<img src=<%= data.recentlysee[i].src %>/>
+							<br>
+						</a>
+						<a href="#"><%= data.recentlysee[i].title %></a>
+						<br />
+						<span class="nowprice" style="color: #c41323;">￥<%= data.recentlysee[i].nowprice %></span>
+						&nbsp;&nbsp;&nbsp;
+						<span class="preprice" style="color: #848484;">
+							￥
+							<s style="text-decoration: line-through;"><%= data.recentlysee[i].preprice %></s>
+						</span>
+					</div>
+					<% } %>
+				</div>
+			</div>
+		</div>
+		<div class="goods_show_img_right">
+			<div style="text-align:left">
+				<div class="goods_show_img_right_nav">
+					<a href="#cmt" class="choose">商品信息</a>
+					<a href="#cmt" >顾客评论</a>
+					<a href="#cmt" >商品问答</a>
+					<a href="#cmt" >售后及配送</a>
+					<a href="#cmt" >正品保证</a>
+				</div>
+				<div class="clear">
+					
+				</div>
+				<div class="content_list">
+					<span>
+						<div class="goods_info">
+							<div class="goods_info_title">
+								<img src="../images/goods/2017-9-18/Info.jpg"/>
+								商品基本信息
+							</div>
+							<div class="goods_info_content">
+								<table>
+									<tr>
+										<td width="250">适用肤质：中性</td>
+										<td>功能：美白</td>
+									</tr>
+								</table>
+							</div>
+							<div class="goods_info_title">
+								<img src="../images/goods/2017-9-18/spxq.jpg"/>
+								商品详情
+							</div>
+							<div class="goods_detail_img">
+								<% for(var i=0;i<data.detais_img.length;i++) {%>
+								<img src=<%= data.detais_img[i].src %>/>
+								<%}%>
+							</div>
+						</div>
+					</span>
+					<span>
+						
+					</span>
+					<span style="display: none;">
+						<div class="spwd">
+							<div class="tips">
+								<div class="text_box">
+									温馨提示：因厂家更改商品包装、产地或者更换随机附件等没有任何提前通知，且每位咨询者购买情况、提问时间等不同，为此以下回复仅对提问者3天内有效，其他网友仅供参考！若由此给您带来不便请多多谅解，谢谢！
+								</div>
+							</div>
+							<div class="spwd_list">
+								<div class="spwdsub">
+									<div class="spwdsub_content">
+										
+									</div>
+								</div>
+								<div class="clear">
+									
+								</div>
+								<hr style="border:solid 10px #fff; width:100%; +width:768px;" />
+								<div class="fbzx">
+									发表咨询
+								</div>
+								<div class="fbsm">
+						   			声明：您可在购买前对产品包装、颜色、运输、库存等方面进行咨询，我们有专人进行回复！因厂家随时会更改一些产品的包装、颜色、
+				                                        产地等参数，所以该回复仅在当时对提问者有效，其他网友仅供参考！咨询回复的工作时间为：周一至周日：9:00至21:00，请耐心等待工作人员的回复。
+								</div>
+								<div class="zxlx">
+									<font style="color: #000;font-weight: bold;">咨询类型</font>
+									<input type="radio" name="asktype"  value="1" id="Radio" checked="checked" />
+									<label for="Radio">商品咨询</label>
+									<input type="radio" name="asktype"  value="1" id="Radio1" />
+									<label for="Radio1">库存及配送</label>
+									<input type="radio" name="asktype"  value="1" id="Radio2"  />
+									<label for="Radio2">支付问题</label>
+									<input type="radio" name="asktype"  value="1" id="Radio3" />
+									<label for="Radio3">发票及保修</label>
+									<input type="radio" name="asktype"  value="1" id="Radio4"  />
+									<label for="Radio4">促销及赠品</label>
+									<font style="color: #000;font-weight: bold;">咨询内容</font>
+									<textarea class="zxtext"></textarea>
+									<br />
+									<br />
+									<a><img src="../images/goods/2017-9-18/submit.jpg"/></a>
+								</div>
+							</div>
+						</div>
+					</span>
+					
+					<span>
+						
+					</span>
+					<span>
+						
+					</span>
+					<div class="gkpl">
+						<a href="#">顾客评论</a>
+					</div>
+					<span>
+						<div style="padding-top: 10px;font-size: 14px;font-weight: bold;color: #000;">
+							<img src="../images/goods/2017-9-18/gkpl_star.gif"/>顾客评论
+							<div class="comments">
+								
+							</div>
+						</div>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</script>

@@ -94,7 +94,7 @@
 	<li>
 		<div class="goods">
 			<div class="goods_img">
-				<a href="#">
+				<a href=<%= "http://localhost:8080/html/goods.html?id="+data[j].id %>>
 					<img src=<%= data[j].src %>/>
 				</a>
 			</div>
@@ -117,7 +117,9 @@
 			</div>
 			<div class="goods_title">
 				<span class="goods_name">
-					<a href="#"><%= data[j].title %></a>
+					<a href=<%= "http://localhost:8080/html/goods.html?id="+data[j].id %>>
+						<%= data[j].title %>
+					</a>
 				</span>
 			<%	if(data[j].talk==undefined)  {%>
 				<span>

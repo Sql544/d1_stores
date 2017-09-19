@@ -16,9 +16,12 @@ var rename = require("gulp-rename");
 var concat = require("gulp-concat");
 var sass = require("gulp-ruby-sass");
 var connect = require("gulp-connect"); //热部署（即时刷新）
+var webserver = require("gulp-webserver");
+var proxy = require('http-proxy-middleware');
 gulp.task("refresh",function(){
      //src用来读取，pipe用来输送
      gulp.src("./*.html").pipe(connect.reload());
+     gulp.src("./*/*.html").pipe(connect.reload());
 });
 gulp.task("ES6",function(){
 	gulp.src("./**.js").pipe(babel({
@@ -54,15 +57,40 @@ gulp.task("compile", function(){
 		style:"expanded"
 	}).pipe(gulp.dest("./css/"))
 });
+gulp.task("webserver", function () {
+	gulp.src('./')
+		.pipe(
+			webserver({
+				host: 'localhost',
+				port: 8080,
+				livereload: true,
+				directoryListing: {
+					enable: true,
+					path: './'
+				},
+//				middleware: [
+//					proxy('/api',{
+//						target: 'http://www.womai.com/', // target host
+//      				changeOrigin: true,               // needed for virtual hosted sites
+//					})
+//				]
+				
+			})
+		)
+	
+})
 gulp.task("listen",function(){
-	connect.server({
-          livereload:true
-     });
+	
      //检测HTML文件的变化，执行刷新任务
+    gulp.watch("./*.html", ["refresh"]);
+    gulp.watch("./html/*.html", ["refresh"]);
     gulp.watch("./css/*.css", ["refresh"]);
 	gulp.watch("./*.js",["ES6"]);
 	gulp.watch("./js/*/*.js",["ES6"]);
 	gulp.watch("./js/*.js",["ES6"]);
 	gulp.watch("./html/*.js",["ES6"]);
 	gulp.watch("./scss/*.scss",["compile"])
+})
+gulp.task('default', ["listen", "webserver"], function () {
+	console.log('done.');
 })

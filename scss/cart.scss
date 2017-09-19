@@ -1,0 +1,110 @@
+.header{
+    width: 887px;
+    height: 43px;
+    margin: 0 auto;
+    .user_help{
+        padding-top: 10px;
+        margin-left: 300px;
+        .f_r{
+            float: right;
+            line-height: 34px;
+        }
+        .f_l{
+            float: right;
+            line-height: 34px;
+            width:300px;
+            a{
+                color: #8CC341;
+                margin: 0 5px;
+            }
+        }
+    }
+}
+.center{
+    margin: 0 auto;
+    width: 887px;
+    .cart_logo{
+        width: 887px;
+        height: 65px;
+    }
+    .cart_content{
+        width: 885px;
+        border: 1px solid #c2c2c2;
+        .cart_title{
+            background: rgb(255,236,242);
+            height: 40px;
+            color: rgb(62,60,61);
+            font-size: 18px;
+            line-height: 40px;
+            padding-left: 20px;
+            font-weight: bold;
+        }
+        .cart_tips{
+            color: #333;
+            line-height: 60px;
+            font-size: 13px;
+            font-weight: bold;
+            padding-left: 20px;
+            border-bottom: 1px solid #b33b57;
+        }
+        .goods_list{
+            padding-top: 2px;
+            color: #6a6a6a;
+            table{
+                text-align: center;
+                .th{
+                    background: #DDDDDD;
+                    height: 36px;
+                    color: #68696b;
+                    text-align: center;
+                }
+            }
+            img{
+                width: 70px;
+                height: 70px;
+            }
+            td{
+                a{
+                    color: #325bc4;
+                    text-decoration: underline;
+                    line-height: 16px;
+                }
+            }
+        }
+        .tailed{
+            height: 40px;
+            text-align: right;
+            padding-right: 20px;
+            color: #000;
+            border-bottom: dashed 1px #CCC;
+            line-height: 40px;
+            
+        }
+        .check_once{
+            height: 40px;
+            text-align: right;
+            padding-top: 10px;
+            border-bottom: none;
+            a{
+                color: #325bc4;
+                line-height: 13px;
+                text-decoration: none;
+               
+             
+            }
+        }
+        .mstext{
+            text-align: left;
+            padding: 10px 0 10px 15px;
+            background: #ffecf2;
+            border-bottom: none;
+            line-height: 25px;
+        }
+    }
+}
+.clear {
+    clear: both;
+    font-size: 1px;
+    line-height: 0;
+    height: 0px;
+}

@@ -1,12 +1,12 @@
 require(["js/config"],function(){
-	require(["jquery","jquery_ui"],function(){
+	require(["jquery","jquery_ui","head"],function(){
 	
 		$("#head_insert").load("html/head.html",function(){
-			console.log($(".searchbox"));
-			autocomplete();
+			test();
 		});//加载头部
 		$("#footer_insert").load("html/footer.html");//加载页底
 		$(function(){
+			var username = location.href.slice(location.href.indexOf("username=")+9);
 			
 			var ismouseover = false;
 			$(".banner").mouseover(function(){//鼠标放在轮播图上轮播图的自动播放停止
@@ -162,22 +162,7 @@ require(["js/config"],function(){
 			})
 			$(".banner ul li").eq(start).removeClass("static").addClass("active").siblings().removeClass("active").addClass("static");
 		}
-		function autocomplete(){
-			$(".searchbox").autocomplete({
-		    	source : function( request, response ) {
-			        $.ajax({
-			          	url: "http://suggestion.baidu.com?wd="+request.term,
-			          	dataType: "jsonp",
-			          	jsonp: "cb",
-			          	success: function( data ) {
-			            	response(data.s);
-			          	}
-			        });
-		      	},
-		      	select : function( event, ui ){
-		      		console.log(ui.item.value)
-		      	}
-		   });
-		}
+		
+		
 	})
 })

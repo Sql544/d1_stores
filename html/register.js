@@ -96,7 +96,7 @@ require(["../js/config"],function(){
 						}	
 					}
 					Cookie.insertCookie("message",JSON.stringify(arr),3600*24*5,"/");
-					window.location.href="http://127.0.0.1:8020/d1/html/login.html";
+					window.location.href="/html/login.html";
 				}
 			})
 		})
