@@ -65,6 +65,29 @@
 				</div>
 			</div>
 		</div>
+		<div class="insert_into_cart" style="display: none;">
+			<div class="insert_title">
+				<h4 id="tips">提示</h4>
+				<a class="btn_close"></a>
+			</div>
+			<div class="insert_content">
+				<div class="insert_content_innerbox">
+					<div class="hint_content">
+						<p class="hint_title">已成功添加到购物车</p>
+						<p class="hint_message">购物车里已有<span>9</span>件商品，总价<span>472</span>元。</p>
+						<div class="two_btn">
+							<a href="/html/cart.html" class="gotocart">
+								<img src="http://images.d1.com.cn/images2012/New/product/chakan.gif"/>
+							</a>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="#" class="continueShopping">
+								<img src="../images/lists/jixu.gif"/>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div id="footer_insert"></div>
 	</body>
 </html>
@@ -93,8 +116,11 @@
 <% for(var j in data){%>
 	<li>
 		<div class="goods">
+			<div class="goods_id" style="display: none;">
+				<span><%= data[j].id %></span>
+			</div>
 			<div class="goods_img">
-				<a href=<%= "http://localhost:8080/html/goods.html?id="+data[j].id %>>
+				<a target="_blank" href=<%= "http://localhost:8080/html/goods.html?id="+data[j].id %>>
 					<img src=<%= data[j].src %>/>
 				</a>
 			</div>
@@ -117,7 +143,7 @@
 			</div>
 			<div class="goods_title">
 				<span class="goods_name">
-					<a href=<%= "http://localhost:8080/html/goods.html?id="+data[j].id %>>
+					<a target="_blank" href=<%= "http://localhost:8080/html/goods.html?id="+data[j].id %>>
 						<%= data[j].title %>
 					</a>
 				</span>
@@ -140,7 +166,7 @@
 				</br>
 					<a style="margin-top: -5px; cursor: pointer;"><img src="../images/lists/amountarrow-down.gif"/></a>
 				</span>
-				<span class="mg_l">
+				<span class="mg_l addintoct">
 					<img src="../images/lists/addcart.jpg"/>
 				</span>
 			</div>

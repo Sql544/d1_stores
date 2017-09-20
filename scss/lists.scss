@@ -231,6 +231,9 @@
                         }
                         .mg_l{
                             margin-left: 10px;
+                            img:hover{
+                                cursor: pointer;
+                            }
                         }
                     }
                     .goods_shop{
@@ -287,6 +290,63 @@
             }
             a:hover{
                 color:#AA2E44;
+            }
+        }
+    }
+}
+.insert_into_cart{
+    width: 400px;
+    left: 439px;
+    top: 764.5px;
+    display: block;
+    position: absolute;
+    z-index:20000000;
+    border:1px solid #8cc0e7;
+    background: #FAFDFF;
+    box-shadow: 4px 5px 0 #D9D9D9;
+    .insert_title{
+        background: rgb(210,237,255);
+        font-size: 14px;
+        font-weight: 700;
+        height: 30px;
+        line-height: 30px;
+        padding-left: 10px;
+        text-align: left;
+        #tips{
+            float: left;
+        }
+        .btn_close{
+            float: right;
+            width: 13px;
+            height: 13px;
+            margin: 8px 10px 0 0;
+            background: urL("http://images.d1.com.cn/images2012/New/result/box1.png") no-repeat 0 -42px;
+            font-size: 0;
+            cursor: pointer;
+        }
+        .btn_close:hover{
+            background-position: -16px -42px;
+            color: #aa2e44;
+        }
+    }
+    .insert_content{
+        padding: 20px;
+        line-height: 1.5em;
+        text-align: left;
+        .insert_content_innerbox{
+            overflow: hidden;
+            padding: 3px 0 0 34px;
+            .hint_content{
+                float: left;
+                color: #333333;
+                .hint_title{
+                    margin-bottom: 5px;
+                    font-size: 14px;
+                    font-weight: bold;
+                }
+                .two_btn{
+                    margin: 15px 0 5px;
+                }
             }
         }
     }

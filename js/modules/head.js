@@ -1,4 +1,3 @@
-
 function test(){
 	autocomplete();
 	var CookieMessage = getCookie("loginmessage");

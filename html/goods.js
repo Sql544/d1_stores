@@ -31,7 +31,7 @@ require(["../js/config"],function(){
 					console.log()
 					callback1(result);
 					if(result.msedate){
-						setInterval(function(){
+						setInterval(function(){//倒计时
 							var nowdata = new Date();
 							var thatdate = new Date(msg.msedate.slice(0,10));
 							var leftTime = -(nowdata.getTime()-thatdate.getTime());
@@ -43,14 +43,81 @@ require(["../js/config"],function(){
 							$("#leftTime").text("剩余时间"+day+"天"+change(hour)+":"+change(minutes)+":"+change(seconds));
 						},1000)
 					}
-					titletab();
-					bigImg();
-					SmallImgHover();
-					goods_num();
+					titletab();//切换标题
+					bigImg();//放大镜
+					SmallImgHover();//小图片映射
+					goods_num();//增加或减少商品数量
+					insertIntoCart();//加入购物车
+					closebox();//关闭弹出框
+					backTotop();//回到顶部
 				}
 			});
 			
 		})
+		function backTotop(){
+			$(".fixed_box").click(function(e){
+				if(e.offsetY>62){
+					$("body").stop().animate({
+						scrollTop:0
+					},500)
+				}
+			})
+		}
+		function insertIntoCart(){
+			var obj = {
+				src : "",
+				title : "",
+				id : "",
+				size : "",
+				vipprice : "",
+				getprice : "",
+				num : "",
+				total : ""
+			}
+			$(".mg_l img").click(function(){
+				$(".insert_into_cart").css({
+					display : "block",
+					top : ($(window).height()/2+$(window).scrollTop())+"px"
+				})
+				obj.src = $(".wrap a img").attr("src");
+				obj.title = $(".goods_right_title h1 font").text().trim();
+				obj.id = $(".shop_id").text();
+				obj.size = "无";
+				obj.vipprice = $(".big_price").text().slice(1,$(".big_price").text().indexOf("."));
+				obj.getprice = obj.vipprice;
+				obj.num = $("#buy_num_input").val();
+				obj.total = obj.vipprice*obj.num;
+				var arr = null;
+				if(Cookie.getCookie("goods")){
+					arr = JSON.parse(Cookie.getCookie("goods"));
+				}else{
+					arr = [];
+				}
+				for(var i=0;i<arr.length;i++){
+					if(arr[i].id==obj.id){
+						arr[i].num = parseInt(arr[i].num)+parseInt(obj.num);
+						arr[i].total = arr[i].num*arr[i].getprice;
+						break;
+					}
+				}
+				if(arr.length==0||i==arr.length){
+					arr.push(obj);
+				}
+				Cookie.insertCookie("goods",JSON.stringify(arr),3600*24*5);
+			})
+		}
+		function closebox(){
+			$(".btn_close").click(function(){
+				$(".insert_into_cart").css({
+					display : "none"
+				})
+			})
+			$(".continueShopping").click(function(){
+				$(".insert_into_cart").css({
+					display : "none"
+				})
+			})
+		}
 		function change(data){
 			if(data<10){
 				data = "0"+data.toString();

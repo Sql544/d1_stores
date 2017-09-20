@@ -17,6 +17,29 @@
 		<div class="fixed_box">
 			<img src="../images/goods/2017-9-18/p_015.jpg"/>
 		</div>
+		<div class="insert_into_cart" style="display: none;">
+			<div class="insert_title">
+				<h4 id="tips">提示</h4>
+				<a class="btn_close"></a>
+			</div>
+			<div class="insert_content">
+				<div class="insert_content_innerbox">
+					<div class="hint_content">
+						<p class="hint_title">已成功添加到购物车</p>
+						<p class="hint_message">购物车里已有<span>9</span>件商品，总价<span>472</span>元。</p>
+						<div class="two_btn">
+							<a href="/html/cart.html" class="gotocart">
+								<img src="http://images.d1.com.cn/images2012/New/product/chakan.gif"/>
+							</a>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<a class="continueShopping">
+								<img src="../images/lists/jixu.gif"/>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div id="footer_insert"></div>
 	</body>
 </html>
@@ -91,7 +114,7 @@
 			</div>
 			<div class="goods_new_top_right">
 				<div class="goods_right_title">
-					<h1><%= data.pgdsname %>
+					<h1><font><%= data.pgdsname %></font>
 						<span style="display: block;"><%= data.pgdstitle %> </span>
 					</h1>
 				</div>
@@ -134,7 +157,7 @@
 				</div>
 				<table border="0" cellspacing="0" cellpadding="0" width="100%">
 					<tbody>
-						<tr height="30"><td colspan="3">商品编码：<%= data.gdsid %></td></tr>
+						<tr height="30"><td colspan="3">商品编码：<font class="shop_id"><%= data.gdsid %></font></td></tr>
 						<tr height="30"><td colspan="3">品       牌：<font color="#c0000">[<a href="#" target="_blank">Mentholatum曼秀雷敦</a>]</font></td></tr>
 						<tr height="30"><td colspan="3">服       务：<%= data.shoptxt %></td></tr>
 						<tr height="30">
@@ -169,7 +192,7 @@
 						</tr>
 						<tr height="60">
 							<td colspan="3" valign="middle">
-								<a href="#" style="margin-right: 5px;"><img src="../images/goods/2017-9-18/frgwc.png"/></a>
+								<a style="margin-right: 5px;" class="mg_l"><img src="../images/goods/2017-9-18/frgwc.png"/></a>
 								<a href="#"><img src="../images/goods/2017-9-18/jrsc.png"/></a>
 							</td>
 						</tr>
