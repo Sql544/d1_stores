@@ -2,7 +2,11 @@ require(["../js/config"],function(){
 	require(["jquery","test","common","jquery_ui","goods","head"],function($){
 		$ = jQuery;
 		$("#head_insert").load("head.html",function(){
-			test();
+			setTimeout(function(){
+				test();
+				
+			},300)
+			
 		});
 		$("#footer_insert").load("footer.html");
 		$(function(){
@@ -12,41 +16,7 @@ require(["../js/config"],function(){
 			jsonp_goods(url1);
 			var pagemax = 20;
 			setTimeout(function(){
-				$(".shoptitle").each(function(){
-					if($(this).text().trim()=="价格"){
-						$price = $(this).siblings().find("a")
-				    }
-				})
-				$price.click(function(){
-					var click_range = $(this).text();
-					var block_num = 0;
-					if(click_range.indexOf("-")!=-1){
-						var left_range = click_range.slice(0,click_range.indexOf("-"));
-						var right_range = click_range.slice(click_range.indexOf("-")+1);
-					}
-					else{
-						var range = parseInt(click_range);
-						
-					}
-					console.log(range);
-					$(".shop_list li").find(".my_price").each(function(){
-						if(range){
-							if($(this).find("font").text()<range){
-								$(this).get(0).parentNode.parentNode.parentNode.remove();
-							}
-						}else{
-							console.log(parseInt($(this).find("font").text()),parseInt(right_range));
-							if(parseInt($(this).find("font").text())>parseInt(right_range)||parseInt($(this).find("font").text())<parseInt(left_range)){
-								$(this).get(0).parentNode.parentNode.parentNode.style.display = "none";
-							}else{
-								$(this).get(0).parentNode.parentNode.parentNode.style.display = "block";
-								block_num++;
-							}
-						}
-						$(".pagefooter").remove();
-					})
-					
-				})
+				accordingToprice_show();
 				$(".shop_list li").each(function(){
 					if($(this).index()>=pagemax){
 						$(this).css({
@@ -54,22 +24,60 @@ require(["../js/config"],function(){
 						})
 					}
 				})
-				$(".goods_num_btn a").click(function(){
-					if($(this).index()==0){
-						$(this).get(0).parentNode.previousElementSibling.children[0].value ++;
-					}else if($(this).index()==2&&$(this).get(0).parentNode.previousElementSibling.children[0].value>1){
-						$(this).get(0).parentNode.previousElementSibling.children[0].value --;
-					}
-				})
+				shops_num_btn();
 				var page = Math.ceil($(".shop_list li").length/pagemax);
 				pagejump(page);//分页
-				$(".pagefooter font").eq(0).text(page);
+				$(".pagefooter font").eq(0).text(page); 
 				insertIntoCart();//加入购物车
 				closebox();//关闭提示框
 				
 			},300)
 			
 		})
+		function shops_num_btn(){
+			$(".goods_num_btn a").click(function(){
+				if($(this).index()==0){
+					$(this).get(0).parentNode.previousElementSibling.children[0].value ++;
+				}else if($(this).index()==2&&$(this).get(0).parentNode.previousElementSibling.children[0].value>1){
+					$(this).get(0).parentNode.previousElementSibling.children[0].value --;
+				}
+			})
+		}
+		function accordingToprice_show(){
+			$(".shoptitle").each(function(){
+				if($(this).text().trim()=="价格"){
+					$price = $(this).siblings().find("a")
+			    }
+			})
+			$price.click(function(){
+				var click_range = $(this).text();
+				var block_num = 0;
+				if(click_range.indexOf("-")!=-1){
+					var left_range = click_range.slice(0,click_range.indexOf("-"));
+					var right_range = click_range.slice(click_range.indexOf("-")+1);
+				}
+				else{
+					var range = parseInt(click_range);
+					
+				}
+				$(".shop_list li").find(".my_price").each(function(){
+					if(range){
+						if($(this).find("font").text()<range){
+							$(this).get(0).parentNode.parentNode.parentNode.remove();
+						}
+					}else{
+						if(parseInt($(this).find("font").text())>parseInt(right_range)||parseInt($(this).find("font").text())<parseInt(left_range)){
+							$(this).get(0).parentNode.parentNode.parentNode.style.display = "none";
+						}else{
+							$(this).get(0).parentNode.parentNode.parentNode.style.display = "block";
+							block_num++;
+						}
+					}
+					$(".pagefooter").remove();
+				})
+				
+			})
+		}
 		function insertIntoCart(){
 			var obj = {
 				src : "",
@@ -81,6 +89,12 @@ require(["../js/config"],function(){
 				num : "",
 				total : ""
 			}
+			var LoginMessage = Cookie.getCookie("loginmessage");
+			if(LoginMessage==0){
+				var loginUser = "passerby";
+			}else{
+				var loginUser = JSON.parse(LoginMessage)[0].username;
+			}
 			$(".addintoct img").click(function(){
 				$target_locate_box = $(this).parent().parent().parent()
 				obj.src = $target_locate_box.find(".goods_img img").attr("src");
@@ -90,35 +104,41 @@ require(["../js/config"],function(){
 				obj.getprice = obj.vipprice;
 				obj.num = $target_locate_box.find(".goods_incart input").val();
 				obj.total = obj.num*obj.vipprice;
-				var arr = null;
-				if(Cookie.getCookie("goods")){
-					arr = JSON.parse(Cookie.getCookie("goods"));
-				}else{
-					arr = [];
-				}
-				for(var i=0;i<arr.length;i++){
-					if(arr[i].id==obj.id){
-						arr[i].num = parseInt(arr[i].num)+parseInt(obj.num);
-						arr[i].total = arr[i].num*arr[i].getprice;
+				var CookieGoods = Cookie.getCookie("goods");
+				CookieGoods = JSON.parse(CookieGoods);
+				CookieGoods = Array.from(CookieGoods);
+				for(var i=0;i<CookieGoods.length;i++){
+					if(CookieGoods[i].name==loginUser){
+						for(var j=0;j<CookieGoods[i].goods.length;j++){
+							if(CookieGoods[i].goods[j].id==obj.id){
+								CookieGoods[i].goods[j].num = parseInt(CookieGoods[i].goods[j].num)+parseInt(obj.num);
+								CookieGoods[i].goods[j].total = CookieGoods[i].goods[j].num*CookieGoods[i].goods[j].getprice;
+								break;
+							}
+						}
+						if(CookieGoods[i].goods.length==0||j==CookieGoods[i].goods.length){
+							CookieGoods[i].goods.push(obj);
+						}
 						break;
 					}
 				}
-				if(arr.length==0||i==arr.length){
-					arr.push(obj);
-				}
-				Cookie.insertCookie("goods",JSON.stringify(arr),3600*24*5);
+				Cookie.insertCookie("goods",JSON.stringify(CookieGoods),3600*24*5,"/");
+				test();
 				$(".insert_into_cart").css({
 					display : "block",
 					top : ($(window).height()/2+$(window).scrollTop())+"px"
 				})
-				var CookieMessage = Cookie.getCookie("goods");
-				CookieMessage = JSON.parse(CookieMessage);
-				CookieMessage = Array.from(CookieMessage);
+				for(var i=0;i<CookieGoods.length;i++){
+					if(CookieGoods[i].name==loginUser){
+						var mygoods = CookieGoods[i].goods;
+						break;
+					}
+				}
 				var count = 0;
 				var alltotal = 0;
-				for(var i in CookieMessage){
-					alltotal += parseInt(CookieMessage[i].total);
-					count += parseInt(CookieMessage[i].num);
+				for(var i in mygoods){
+					alltotal += parseInt(mygoods[i].total);
+					count += parseInt(mygoods[i].num);
 				}
 				$(".hint_message span").first().text(count);
 				$(".hint_message span").last().text(alltotal);
@@ -217,7 +237,6 @@ require(["../js/config"],function(){
 				if(parseInt(btn_index)){
 					$cilick.addClass("curr").siblings().removeClass("curr");
 					$(".shop_list li").each(function(){
-						console.log($(this).index(),pagemax*btn_index)
 						if($(this).index()>=pagemax*btn_index||$(this).index()<pagemax*(btn_index-1)){
 							$(this).css({
 								display:"none"

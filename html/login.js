@@ -1,6 +1,9 @@
 require(["../js/config"],function(){
 	require(["jquery","common"],function($){
 		$ = jQuery;
+		var yzcode = ["0M43","2L5N","3T7S","5Y93","68F9","98K4","165A","854U","1024","3341","6294","9242","CYX0","F7V8","H956","I745","R237","UX3V","Z1R8","Z169"];
+		var index = Math.floor(Math.random()*yzcode.length);
+		$("#check_num").attr("src","../images/yzcode/"+yzcode[index]+".jpg");
 		$("#head_insert").load("login_head.html");
 		$("#footer_insert").load("footer.html");
 		$(function(){
@@ -10,8 +13,15 @@ require(["../js/config"],function(){
 			summit_click(CookieMessage);
 			input_focus_event();
 			input_blur_event();
+			changeCode();
 			
 		})
+		function changeCode(){
+			$(".changeCode").click(function(){
+				index = Math.floor(Math.random()*yzcode.length);
+				$("#check_num").attr("src","../images/yzcode/"+yzcode[index]+".jpg");
+			})
+		}
 		function summit_click(CookieMessage){
 			var canlogin = false;
 			$("#submit_btn_img").click(function(){
@@ -19,7 +29,7 @@ require(["../js/config"],function(){
 				$pwd = $("#login_pwd").val();
 				$Code = $("#login_Code").val();
 				CookieMessage.map(function(item){
-				if(item.username == $username && item.pwd == $pwd && $Code == "A53T"){
+				if(item.username == $username && item.pwd == $pwd && $Code == yzcode[index]){
 						console.log(1);
 						canlogin = true;
 					}
@@ -34,7 +44,7 @@ require(["../js/config"],function(){
 					arr.push(islogin)
 					Cookie.insertCookie("loginmessage",JSON.stringify(arr),0,"/");
 				}else{
-					alert("密码错误");
+					alert("登录失败");
 				}
 			})
 		}

@@ -57,7 +57,7 @@ require(["../js/config"],function(){
 		function backTotop(){
 			$(".fixed_box").click(function(e){
 				if(e.offsetY>62){
-					$("body").stop().animate({
+					$("html").stop().animate({
 						scrollTop:0
 					},500)
 				}
@@ -74,11 +74,13 @@ require(["../js/config"],function(){
 				num : "",
 				total : ""
 			}
+			var LoginMessage = Cookie.getCookie("loginmessage");
+			if(LoginMessage==0){
+				var loginUser = "passerby";
+			}else{
+				var loginUser = JSON.parse(LoginMessage)[0].username;
+			}
 			$(".mg_l img").click(function(){
-				$(".insert_into_cart").css({
-					display : "block",
-					top : ($(window).height()/2+$(window).scrollTop())+"px"
-				})
 				obj.src = $(".wrap a img").attr("src");
 				obj.title = $(".goods_right_title h1 font").text().trim();
 				obj.id = $(".shop_id").text();
@@ -87,23 +89,44 @@ require(["../js/config"],function(){
 				obj.getprice = obj.vipprice;
 				obj.num = $("#buy_num_input").val();
 				obj.total = obj.vipprice*obj.num;
-				var arr = null;
-				if(Cookie.getCookie("goods")){
-					arr = JSON.parse(Cookie.getCookie("goods"));
-				}else{
-					arr = [];
-				}
-				for(var i=0;i<arr.length;i++){
-					if(arr[i].id==obj.id){
-						arr[i].num = parseInt(arr[i].num)+parseInt(obj.num);
-						arr[i].total = arr[i].num*arr[i].getprice;
+				var CookieGoods = Cookie.getCookie("goods");
+				CookieGoods = JSON.parse(CookieGoods);
+				CookieGoods = Array.from(CookieGoods);
+				for(var i=0;i<CookieGoods.length;i++){
+					if(CookieGoods[i].name==loginUser){
+						for(var j=0;j<CookieGoods[i].goods.length;j++){
+							if(CookieGoods[i].goods[j].id==obj.id){
+								CookieGoods[i].goods[j].num = parseInt(CookieGoods[i].goods[j].num)+parseInt(obj.num);
+								CookieGoods[i].goods[j].total = CookieGoods[i].goods[j].num*CookieGoods[i].goods[j].getprice;
+								break;
+							}
+						}
+						if(CookieGoods[i].goods.length==0||j==CookieGoods[i].goods.length){
+							CookieGoods[i].goods.push(obj);
+						}
 						break;
 					}
 				}
-				if(arr.length==0||i==arr.length){
-					arr.push(obj);
+				Cookie.insertCookie("goods",JSON.stringify(CookieGoods),3600*24*5,"/");
+				test();
+				$(".insert_into_cart").css({
+					display : "block",
+					top : ($(window).height()/2+$(window).scrollTop())+"px"
+				})
+				for(var i=0;i<CookieGoods.length;i++){
+					if(CookieGoods[i].name==loginUser){
+						var mygoods = CookieGoods[i].goods;
+						break;
+					}
 				}
-				Cookie.insertCookie("goods",JSON.stringify(arr),3600*24*5);
+				var count = 0;
+				var alltotal = 0;
+				for(var i in mygoods){
+					alltotal += parseInt(mygoods[i].total);
+					count += parseInt(mygoods[i].num);
+				}
+				$(".hint_message span").first().text(count);
+				$(".hint_message span").last().text(alltotal);
 			})
 		}
 		function closebox(){
@@ -127,7 +150,7 @@ require(["../js/config"],function(){
 		function titletab(){
 			$(".goods_show_img_right_nav a").click(function(){
 				$(this).addClass("choose").siblings().removeClass("choose");
-				$(".content_list span").not(":last").eq($(this).index()).css({
+				$(".content_list").children().not("div").not(":last").eq($(this).index()).css({
 					display : "block"
 				}).siblings().not(":last").css({
 					display:"none"
@@ -165,8 +188,8 @@ require(["../js/config"],function(){
 				$(".wrap .small_box").stop().fadeIn(100);
 				$(".wrap .big_box").stop().fadeIn(100);
 				mouse_position = {
-					x : e.clientX + document.body.scrollLeft,
-					y : e.clientY + document.body.scrollTop
+					x : e.clientX + $(window).scrollLeft(),
+					y : e.clientY + $(window).scrollTop()
 				}
 				box_position = {
 					x : Math.min($(this).width()-$(".wrap .small_box").width(),Math.max(0,mouse_position.x - $(this).offset().left - $(".wrap .small_box").width()/2)),

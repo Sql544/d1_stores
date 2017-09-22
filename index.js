@@ -1,6 +1,6 @@
 require(["js/config"],function(){
-	require(["jquery","jquery_ui","head"],function(){
-	
+	require(["jquery","jquery_ui","common","head"],function(){
+		$=jQuery;
 		$("#head_insert").load("html/head.html",function(){
 			test();
 		});//加载头部
@@ -33,8 +33,37 @@ require(["js/config"],function(){
 			main_listener();//main监听事件
 			isFixed();//判断是否超过Title导航的高度
 			TitleNavClick();//点击移动导航跳转
-			
+			UserMessage();
 		})
+		function UserMessage(){
+			var LoginMessage = Cookie.getCookie("loginmessage");
+			if(LoginMessage==0){
+				var loginUser = "passerby";
+			}else{
+				var loginUser = JSON.parse(LoginMessage)[0].username;
+			}
+			var UserMessage = Cookie.getCookie("goods");
+			if(UserMessage){
+				UserMessage = JSON.parse(UserMessage);
+				UserMessage = Array.from(UserMessage);
+			}else{
+				UserMessage = [];
+			}
+			var isExist = 0;
+			for(var j=0;j<UserMessage.length;j++){
+				if(UserMessage[j].name==loginUser){
+					isExist = 1;
+				}
+			}
+			if(isExist==0){
+				var obj = {
+					name : loginUser,
+					goods : []
+				}
+				UserMessage.push(obj);
+				Cookie.insertCookie("goods",JSON.stringify(UserMessage),3600*24*5,"/");
+			}
+		}
 		function banner_listener(){
 			$(".banner ul li").mouseover(function(){//轮播图鼠标放上去事件
 				$(this).removeClass("static").addClass("active").siblings().removeClass("active").addClass("static");	
@@ -101,12 +130,12 @@ require(["js/config"],function(){
 			var children = $(".main_inner").children();
 			$(".moveTitle ul li").click(function(){
 				if($(this).index()==0){
-					$("body").animate({
+					$("html,document,body").stop().animate({
 						scrollTop:0
 					},500)
 					return;
 				}
-				$("body").animate({
+				$("html,document,body").stop().animate({
 					scrollTop:((children.eq($(this).index()-1).offset().top)-30)
 				},500)
 			})

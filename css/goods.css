@@ -2,6 +2,59 @@ a:hover {
   cursor: pointer;
 }
 
+.level1, .level2, .level3, .level4, .level5, .level6, .level7, .level8, .level9, .level10 {
+  width: 100px;
+  height: 18px;
+  background-image: url(../images/goods/2017-9-18/star.gif);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.level0 {
+  background-position: 0px 0px;
+}
+
+.level2 {
+  background-position: 0px -20px;
+}
+
+.level4 {
+  background-position: 0px -40px;
+}
+
+.level6 {
+  background-position: 0px -57px;
+}
+
+.level8 {
+  background-position: 0px -76px;
+}
+
+.level10 {
+  background-position: 0px -97px;
+}
+
+.level9 {
+  background-position: 0px -204px;
+}
+
+.level7 {
+  background-position: 0px -182px;
+}
+
+.level5 {
+  background-position: 0px -160px;
+}
+
+.level3 {
+  background-position: 0px -140px;
+}
+
+.level1 {
+  background-position: 0px -120px;
+}
+
 .center {
   margin: 0 auto;
   width: 980px;
@@ -431,6 +484,64 @@ a:hover {
   line-height: 33px;
   background: #fff;
   margin-right: 5px;
+}
+.center .goods_show_img .goods_show_img_right .goodscomments {
+  margin-bottom: 10px;
+  width: 768px;
+}
+.center .goods_show_img .goods_show_img_right .goodscomments .mc {
+  width: 768px;
+  overflow: hidden;
+}
+.center .goods_show_img .goods_show_img_right .goodscomments .mc .item {
+  position: relative;
+  padding: 0 0 12px 130px;
+  margin-bottom: 10px;
+}
+.center .goods_show_img .goods_show_img_right .goodscomments .mc .item .user {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 130px;
+  text-align: center;
+  color: #999;
+}
+.center .goods_show_img .goods_show_img_right .goodscomments .mc .item .userVip img {
+  border: 2px solid #EAEAEA;
+}
+.center .goods_show_img .goods_show_img_right .goodscomments .mc .item .i_item {
+  padding: 10px 15px 5px;
+  border: 1px solid #C07782;
+}
+.center .goods_show_img .goods_show_img_right .goodscomments .mc .item .i_item .o_topic {
+  padding: 0 0 2px;
+  margin-bottom: 10px;
+  border-bottom: 1px dotted grey;
+  overflow: hidden;
+}
+.center .goods_show_img .goods_show_img_right .goodscomments .mc .item .i_item .o_topic .level_star {
+  float: left;
+}
+.center .goods_show_img .goods_show_img_right .goodscomments .mc .item .i_item .o_topic .date_time {
+  float: right;
+}
+.center .goods_show_img .goods_show_img_right .goodscomments .mc .item .i_item .o_topic_noborder {
+  border: 0;
+}
+.center .goods_show_img .goods_show_img_right .goodscomments .mc .item .i_item .o_topic_noborder .comments_content {
+  font-weight: normal;
+  line-height: 26px;
+}
+.center .goods_show_img .goods_show_img_right .goodscomments .mc .item .corner {
+  top: 0;
+  left: 115px;
+  width: 20px;
+  height: 40px;
+  background-position: 0 -206px;
+  position: absolute;
+  background-image: url("http://images.d1.com.cn/images2011/commentimg/icon_clubs.gif");
+  background-color: #fff;
+  overflow: hidden;
 }
 .center .goods_show_img .goods_show_img_left {
   width: 202px;

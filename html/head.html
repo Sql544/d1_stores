@@ -1,6 +1,6 @@
 <div class="head_top" id="top">
 	<div class="head_inner">
-		<p>你好，欢迎来到D1购物，请&nbsp <a href="/html/login.html">登录</a> &nbsp 或 &nbsp<a href="/html/register.html">注册</a>&nbsp </p>
+		<p class="login">你好，欢迎来到D1购物，请&nbsp <a href="/html/login.html">登录</a> &nbsp 或 &nbsp<a href="/html/register.html">注册</a>&nbsp </p>
 		<ul>
 			<li class="point_li">
 				<a href="#">我的账户</a>
@@ -52,7 +52,7 @@
 </div>
 <div class="head_middle">
 	<div class="head_middle_inner">
-		<h1><a href="index.html"></a></h1>
+		<h1><a href="/index.html"></a></h1>
 		<div class="head_middle_inner_middle">
 			<input id="searchbox" class="searchbox" type="text" placeholder="请输入你要搜索的商品名称或编码" />
 			<input class="searchbtn" type="button" value="搜索" />
@@ -69,7 +69,26 @@
 			<img src="http://localhost:8020/d1/images/help.jpg"/>
 		</div>
 		<div class="shopping_car">
-			<p class="shopping_car_word">购物车&nbsp<span>0</span>&nbsp件</p>
+			<a href="/html/cart.html" class="shopping_car_word">购物车&nbsp;<span>0</span>&nbsp;件</a>
+			<div class="cart">
+				<table>
+					<tbody>
+						
+					</tbody>
+				</table>
+				<div class="area_info">
+					<div style="float: left;">
+						<span style="float: left;display: block;">
+							购物车中有
+							<em class="shops_num">5</em>
+							件商品  金额总计：￥<em class="all_money">575</em>
+						</span>
+					</div>
+					<a href="/html/cart.html" target="_blank" style="float: right;margin-right: 10px;">
+						<img src="http://images.d1.com.cn/images2012/New/viewcart.gif" style="vertical-align: middle;"/>
+					</a>
+				</div>
+			</div>
 		</div>
 	</div>			
 </div>

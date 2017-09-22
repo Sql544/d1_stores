@@ -127,13 +127,16 @@ var Cookie = {//Cookie
 		for(var i=0;i<arr.length;i++){
 			var keylist = arr[i].split("=");
 			if(keylist[0]==str){
-				return keylist[1];
+				
+				return decodeURIComponent(keylist[1]);
 			}
 		}
 		return 0;
 	},
-	insertCookie : function(name,content,expires,path){
-		document.cookie = name + "=" + content+";" + (expires? "max-age="+ expires+ ";" :"") + (path? "path=" +path+ ";" :"");
+	insertCookie : function(name,content,expires,path,domain){
+		console.log(name + "=" + content+";" + (expires? "max-age="+ expires+ ";" :"") + (path? "path=" +path+ ";" :"/")+(domain? "domain=" + domain + ";":""));
+		content = encodeURIComponent(content);
+		document.cookie = name + "=" + content+";" + (expires? "max-age="+ expires+ ";" :"") + (path? "path=" +path+ ";" :"/")+(domain? "domain=" + domain + ";":"");
 	}
 }
 

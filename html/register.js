@@ -1,8 +1,11 @@
 require(["../js/config"],function(){
 	require(["jquery","common"],function($){
 		$ = jQuery;
+		var yzcode = ["0M43","2L5N","3T7S","5Y93","68F9","98K4","165A","854U","1024","3341","6294","9242","CYX0","F7V8","H956","I745","R237","UX3V","Z1R8","Z169"];
+		var index = Math.floor(Math.random()*yzcode.length);
+		$(".check_code_img").attr("src","../images/yzcode/"+yzcode[index]+".jpg");
 		var check = {
-			mobile_phone : /^(\d{11})|(\d{8})$/,
+			mobile_phone : /^(\d{11})$/,
 			mobile_phone_check : /^\d{4}$/,
 			password : /^.{6,14}$/,
 			Confirm_password : /^.{6,14}$/
@@ -15,7 +18,7 @@ require(["../js/config"],function(){
 				$(this).prop("checked",false);
 			})
 			focusEvent($("#mobile_phone"),$("#mobile_notice"),$("#tel_notice"),"请输入正确的手机号码。便于您接受订单消息，找回密码等。")
-			blurEvent($("#mobile_phone"),$("#tel_notice"),$("#mobile_notice"),"手机号码不能为空，请输入",check.mobile_phone);
+			blurEvent($("#mobile_phone"),$("#tel_notice"),$("#mobile_notice"),"手机号码格式不对，必须为11位数字",check.mobile_phone);
 		
 			focusEvent($("#mobile_phone_check"),$("#code_notice"),"","请输入手机验证码")
 			blurEvent($("#mobile_phone_check"),"",$("#code_notice"),"验证码不能为空",check.mobile_phone_check);
@@ -50,8 +53,9 @@ require(["../js/config"],function(){
 					$(this).attr("ispass",false);
 				}
 			})
+			changeCode();
 			$("#check_code").blur(function(){
-				if($(this).val()=="A53T"){
+				if($(this).val()==yzcode[index]){
 					$(this).attr("ispass",true);
 				}else{
 					$(this).attr("ispass",false);
@@ -61,7 +65,8 @@ require(["../js/config"],function(){
 			$("#register_submit").click(function(){
 				var canpass = true;
 				$("input").not("#getCheckCode").not(":last").each(function(){
-					if(!$(this).attr("ispass")){
+					console.log($(this).attr("ispass"));
+					if($(this).attr("ispass")=="false"){
 						canpass=false;
 					}
 				})
@@ -69,7 +74,6 @@ require(["../js/config"],function(){
 					canpass = false;
 					passwordNotSame();
 				}
-				console.log(canpass);
 				if(canpass){
 					var obj = {
 						username : $("#mobile_phone").val(),
@@ -86,20 +90,27 @@ require(["../js/config"],function(){
 						for(var i in arr){
 							if(arr[i].username==obj.username){
 								flag=0;
-								break;
 								alert("用户名已注册");
-								
+								break;
 							}
 						}
 						if(flag == 1){
 							arr.push(obj);
+							Cookie.insertCookie("message",JSON.stringify(arr),3600*24*5,"/");
+							window.location.href="/html/login.html";
 						}	
 					}
-					Cookie.insertCookie("message",JSON.stringify(arr),3600*24*5,"/");
-					window.location.href="/html/login.html";
+				}else{
+					alert("注册失败，还有错误信息，请检查");
 				}
 			})
 		})
+		function changeCode(){
+			$(".newCode").click(function(){
+				index = Math.floor(Math.random()*yzcode.length);
+				$(".check_code_img").attr("src","../images/yzcode/"+yzcode[index]+".jpg");
+			})
+		}
 		function passwordNotSame(){
 			$("#Confirm_pwd_notice_img").css({
 				display:"inline-block",
@@ -112,7 +123,6 @@ require(["../js/config"],function(){
 			$(".sexinput").find("input").click(function(){
 				console.log($(this).prop("checked"));
 				if($(this).prop("checked")==true){
-					console.log("选中");
 					$(this).prop("checked",true);
 					$(this).siblings().prop("checked",false)
 					$("#sex_notice").text("");
@@ -122,7 +132,6 @@ require(["../js/config"],function(){
 					$(this).attr("ispass",true);
 					$(this).siblings().attr("ispass",true);
 				}else{
-					console.log("取消选中");
 					$(this).prop("checked",false);
 					$("#sex_notice").text("请选择性别").css({
 						color:"red"

@@ -114,7 +114,6 @@
     width: 100%;
 }
 .head_middle_inner{
-    overflow: hidden;
     height: 105px;
     @include screen_width;
 }
@@ -180,6 +179,7 @@
     margin-left: 95px;
 }
 .shopping_car{
+    position: relative;
     margin-top: 25px;
     float: right;
     width: 150px;
@@ -194,12 +194,52 @@
 .shopping_car_word span{
     color: #f0424e;
 }
+.shopping_car a{
+    color: black;
+}
 .shopping_car_word:after{
     content: "";
     position: relative;
-    left:16px;
+    left:10px;
     top:12px;
     @include triangle(#f0424e);
+}
+.shopping_car:hover .cart{
+    display: block;
+}
+.shopping_car .cart{
+    font-size: 12px;
+    color: #5c5c5c;
+    z-index: 2001;
+    position: absolute;
+    border: #f0424e 2px solid;
+    background: #fff;
+    width: 407px;
+    display: none;
+    top: 35px;
+    right: 0px;
+}
+.cart em{
+    color: #c14d62;
+    font-weight: bold;
+    margin: 0 3px;
+}
+.shopping_car table{
+    border-collapse: collapse;
+    display: table;
+    border-spacing: 2px;
+    border-color: grey;
+}
+.shopping_car table td{
+    border-bottom: 1px dotted #cdcdcd;
+    color: #000;
+}
+.shopping_car .area_info{
+    height: 38px;
+    line-height: 30px;
+    background: #f9f9f9;
+    padding: 5px 10px;
+    color: #000;
 }
 .nav{
     width: 100%;

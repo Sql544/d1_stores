@@ -68,12 +68,15 @@ gulp.task("webserver", function () {
 					enable: true,
 					path: './'
 				},
-//				middleware: [
-//					proxy('/api',{
-//						target: 'http://www.womai.com/', // target host
-//      				changeOrigin: true,               // needed for virtual hosted sites
-//					})
-//				]
+				middleware: [
+					proxy('/api',{
+						target: 'http://www.d1.com.cn/', // target host
+        				changeOrigin: true,               // needed for virtual hosted sites
+        				pathRewrite : {
+        					"^/api" : ""
+        				}
+					})
+				]
 				
 			})
 		)
