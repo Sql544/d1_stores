@@ -28,6 +28,7 @@ require(["../js/config"],function(){
 	})
 })
 function createLists(callback){
+	$=jQuery;
 	var LoginMessage = Cookie.getCookie("loginmessage");
 	if(LoginMessage==0){
 		var loginUser = "passerby";
@@ -134,6 +135,8 @@ function createLists(callback){
 		tr.appendChild(td5);
 		tr.appendChild(td6);
 		tr.appendChild(td7);
+		
+		
 		$(".shopLists tbody").append(tr);
 		
 		
@@ -262,6 +265,7 @@ function deleteall(){
 	})
 }
 function getallnum(){
+	$ = jQuery;
 	var count = 0;
 	$(".buy_num_input").each(function(){
 		count += parseInt($(this).val());

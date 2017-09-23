@@ -4,15 +4,13 @@ require(["../js/config"],function(){
 		$("#head_insert").load("head.html",function(){
 			setTimeout(function(){
 				test();
-				
 			},300)
-			
 		});
 		$("#footer_insert").load("footer.html");
 		$(function(){
-			var url = "http://localhost:8020/d1/Jsonp/Jsonp.js";
+			var url = "/Jsonp/Jsonp.js";
 			jsonp(url);
-			var url1 = "http://localhost:8020/d1/Jsonp/goodsJsonp.js";
+			var url1 = "/Jsonp/goodsJsonp.js";
 			jsonp_goods(url1);
 			var pagemax = 20;
 			setTimeout(function(){

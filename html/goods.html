@@ -49,13 +49,13 @@
 	
 	<div class="center_nav">
 		<img src="../images/goods/2017-9-18/green.gif" width="20" height="35" align="top" style="margin-top: -10px;"/>
-		<a href="http://localhost:8020/d1/index.html" target="_blank">首页</a>
+		<a href="/index.html" target="_blank">首页</a>
 		&nbsp;>&nbsp;
-		<a href="http://localhost:8020/d1/html/lists.html" target="_blank">化妆品</a>
+		<a href="/html/lists.html" target="_blank">化妆品</a>
 		&nbsp;>&nbsp;
-		<a href="http://localhost:8020/d1/html/lists.html" target="_blank">面部护肤</a>
+		<a href="/html/lists.html" target="_blank">面部护肤</a>
 		&nbsp;>&nbsp;
-		<a href="http://localhost:8020/d1/html/lists.html" target="_blank" class="choose">防晒/晒后</a>
+		<a href="/html/lists.html" target="_blank" class="choose">防晒/晒后</a>
 		&nbsp;>&nbsp;
 		<%= data.pgdsname %>
 	</div>
@@ -139,6 +139,7 @@
 						促销价
 					</div>
 				</div>
+				<% if(data.msedate) {%>
 				<div class="left_time">
 					<table width="100%" height="30">
 						<tbody>
@@ -155,6 +156,7 @@
 						</tbody>
 					</table>
 				</div>
+				<%}%>
 				<table border="0" cellspacing="0" cellpadding="0" width="100%">
 					<tbody>
 						<tr height="30"><td colspan="3">商品编码：<font class="shop_id"><%= data.gdsid %></font></td></tr>

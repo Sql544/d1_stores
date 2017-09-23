@@ -1,5 +1,5 @@
 function test(){
-	
+	$ = jQuery;
 	var CookieMessage = getCookie("loginmessage");
 	CookieMessage = JSON.parse(CookieMessage);
 	setTimeout(function(){
@@ -11,8 +11,8 @@ function test(){
 			document.cookie = "loginmessage=0;path=/;";
 			window.location.href="/html/login.html";
 		})
-		shoppingcar();
 	},300)
+	shoppingcar();
 	autocomplete();
 }
 function shoppingcar(){

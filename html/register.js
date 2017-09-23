@@ -66,7 +66,7 @@ require(["../js/config"],function(){
 				var canpass = true;
 				$("input").not("#getCheckCode").not(":last").each(function(){
 					console.log($(this).attr("ispass"));
-					if($(this).attr("ispass")=="false"){
+					if($(this).attr("ispass")=="false"||$(this).attr("ispass")==undefined){
 						canpass=false;
 					}
 				})
